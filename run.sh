@@ -65,16 +65,16 @@ ensure_config \
   "$npm_path" \
   'min-release-age=7 # days
 ignore-scripts=true' \
-  '^min-release-age[[:space:]]*=[[:space:]]*7' \
+  '^min-release-age[[:space:]]*=[[:space:]]*7\([[:space:]].*\)*$' \
   'min-release-age=7 # days' \
-  '^ignore-scripts[[:space:]]*=[[:space:]]*true' \
+  '^ignore-scripts[[:space:]]*=[[:space:]]*true\([[:space:]].*\)*$' \
   'ignore-scripts=true'
 
 ensure_config \
   "pnpm" \
   "$pnpm_path" \
   'minimum-release-age=10080 # minutes' \
-  '^minimum-release-age[[:space:]]*=[[:space:]]*10080' \
+  '^minimum-release-age[[:space:]]*=[[:space:]]*10080\([[:space:]].*\)*$' \
   'minimum-release-age=10080 # minutes'
 
 ensure_config \
@@ -82,6 +82,6 @@ ensure_config \
   "$bun_path" \
   '[install]
 minimumReleaseAge = 604800 # seconds' \
-  '^minimumReleaseAge[[:space:]]*=[[:space:]]*604800' \
+  '^minimumReleaseAge[[:space:]]*=[[:space:]]*604800\([[:space:]].*\)*$' \
   '[install]
 minimumReleaseAge = 604800 # seconds'
